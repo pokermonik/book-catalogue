@@ -1,21 +1,20 @@
-/* Layout główny */
 .content-layout {
     display: grid;
-    grid-template-columns: 1fr 300px; /* Lewa strona elastyczna, prawa 300px */
+    grid-template-columns: 1fr 300px; 
     gap: 30px;
     max-width: 1200px;
-    margin: 0 auto; /* Wyśrodkowanie całego kontenera na stronie */
+    margin: 0 auto; 
     padding: 20px;
 }
 
-/* Siatka kart */
+
 .books-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 25px;
 }
 
-/* Styl karty */
+
 .book-card {
     background: var(--card-bg, #fff);
     border: 1px solid #eee;
@@ -23,7 +22,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrowanie zawartości w poziomie */
+    align-items: center; 
     text-align: center;
     transition: transform 0.2s;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
@@ -33,7 +32,7 @@
     transform: translateY(-5px);
 }
 
-/* Obrazek/Placeholder */
+
 .book-card img, .no-cover {
     width: 120px;
     height: 180px;
@@ -58,25 +57,25 @@
     border: 2px dashed #ccc;
 }
 
-/* Sidebar */
+
 .sidebar {
     background: #fdfdfd;
     padding: 20px;
     border-radius: 12px;
     border: 1px solid #eee;
-    align-self: start; /* Sidebar nie rozciąga się na całą wysokość */
-    position: sticky; /* Będzie jechał za scrollowaniem */
+    align-self: start; 
+    position: sticky; 
     top: 20px;
 }
 
-/* Kontener sidebaru */
+
 .fav-list {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-/* Kompaktowa karta w sidebarze */
+
 .fav-card {
     display: flex;
     align-items: center;
@@ -89,10 +88,10 @@
 }
 
 .fav-card:hover {
-    transform: translateX(4px); /* Delikatny efekt wysunięcia */
+    transform: translateX(4px); 
 }
 
-/* Miniatura okładki */
+
 .fav-cover {
     width: 45px;
     height: 65px;
@@ -101,12 +100,12 @@
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Dane tekstowe */
+
 .fav-details {
     display: flex;
     flex-direction: column;
     flex: 1;
-    min-width: 0; /* Ważne dla ucinania długiego tekstu */
+    min-width: 0; 
 }
 
 .fav-title {
@@ -134,7 +133,7 @@
     padding: 5px;
     color: #ff4757;
 }
-/* Ciemny motyw */
+
 body.dark-theme {
     background-color: #121212;
     color: #f0f0f0;
@@ -151,7 +150,7 @@ body.dark-theme .fav-card, body.dark-theme .sidebar {
     border: 1px solid #333333;
 }
 
-/* Opcjonalnie zmień kolor tekstu autora w dark mode, żeby był czytelniejszy */
+
 body.dark-theme .fav-author, 
 body.dark-theme .book-info p {
     color: #bbbbbb;
@@ -161,23 +160,23 @@ body.dark-theme .book-info p {
 .main-header {
     width: 100%;
     display: flex;
-    flex-direction: column; /* Układa tytuł nad wyszukiwarką */
-    align-items: center;    /* Centruje wszystko w nagłówku w poziomie */
+    flex-direction: column; 
+    align-items: center;    
     padding: 20px 0;
-    background-color: #ffffff; /* Kolor z Twojego dark mode */
+    background-color: #ffffff; 
 }
 
 .search-bar-container {
     width: 100%;
-    max-width: 600px; /* Szerokość paska */
-    margin: 20px auto; /* Auto na boki wyśrodkuje element */
+    max-width: 600px; 
+    margin: 20px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 
-/* Status "Found: 100" też będzie wyśrodkowany */
+
 #status {
     margin-top: 10px;
     color: #888;
@@ -189,25 +188,25 @@ body.dark-theme .book-info p {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Rozsuwa logo, szukajkę i przycisk */
+    justify-content: space-between; 
     padding: 0 20px;
     gap: 20px;
 }
 
 .search-bar-container {
-    flex-grow: 1; /* Pozwala wyszukiwarce zająć wolne miejsce */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Środkuje input i status względem siebie */
-    max-width: 600px; /* Maksymalna szerokość paska */
+    align-items: center; 
+    max-width: 600px; 
 }
 
 #searchInput {
-    width: 90%; /* Pasek zajmie 90% kontenera (600px) */
+    width: 90%; 
     padding: 12px 25px;
-    border-radius: 30px; /* Zaokrąglone brzegi jak na screenie */
+    border-radius: 30px; 
     border: none;
-    background-color: #d1cfcf; /* Dopasowanie do Twojego tła */
+    background-color: #d1cfcf;
     color: rgb(0, 0, 0);
     outline: none;
     font-size: 1rem;
@@ -223,7 +222,7 @@ body.dark-theme .book-info p {
     margin-top: 5px;
 }
 
-/* Dostosowanie dla Dark Mode */
+
 body.dark-theme {
     background-color: #1e1e1e;
     border-bottom-color: #333;

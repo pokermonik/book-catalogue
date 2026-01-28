@@ -42,11 +42,11 @@ export function renderFavoritesUI() {
 
     favorites.forEach(book => {
         const div = document.createElement('div');
-        div.className = 'fav-card'; // Zmieniamy klasę na card dla spójności
+        div.className = 'fav-card'; 
 
         const coverUrl = book.cover_i 
-            ? `https://covers.openlibrary.org/b/id/${book.cover_i}-S.jpg` // Mały rozmiar okładki (-S)
-            : noCoverImg; // lub Twój placeholder
+            ? `https://covers.openlibrary.org/b/id/${book.cover_i}-S.jpg` 
+            : noCoverImg;
 
         div.innerHTML = `
             <img src="${coverUrl}" alt="${book.title}" class="fav-cover">
