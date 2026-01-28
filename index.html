@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Catalogue Test</title>
+  <script type="module" crossorigin src="/book-catalogue/index.js"></script>
+  <link rel="stylesheet" crossorigin href="/book-catalogue/style.css">
+</head>
+<body>
+   
+ <div class="app-wrapper">
+    <header class="main-header">
+        <h1>BookFinder </h1>
+        <div class="search-bar-container">
+            <input type="text" id="searchInput" placeholder="Search for books...">
+           
+            <div id="status">Ready to search</div>
+        </div>
+        <button id="themeToggle" class="btn-theme">🌙</button>
+    </header>
+
+    <div class="content-layout">
+        <main class="results-area">
+            <div id="results" class="books-grid"></div>
+        </main>
+
+        <aside class="sidebar">
+            <h3>Favorites ❤️</h3>
+            <div id="favoritesList" class="fav-list"></div>
+        </aside>
+    </div>
+</div>
+</div> 
+</body>
+</html>
