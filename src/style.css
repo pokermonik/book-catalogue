@@ -1,0 +1,236 @@
+/* Layout główny */
+.content-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px; /* Lewa strona elastyczna, prawa 300px */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto; /* Wyśrodkowanie całego kontenera na stronie */
+    padding: 20px;
+}
+
+/* Siatka kart */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+}
+
+/* Styl karty */
+.book-card {
+    background: var(--card-bg, #fff);
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrowanie zawartości w poziomie */
+    text-align: center;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Obrazek/Placeholder */
+.book-card img, .no-cover {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.book-year,.book-author{
+
+    font-size: 0.75rem;
+    color: #666;
+
+}
+.no-cover {
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: #888;
+    border: 2px dashed #ccc;
+}
+
+/* Sidebar */
+.sidebar {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    align-self: start; /* Sidebar nie rozciąga się na całą wysokość */
+    position: sticky; /* Będzie jechał za scrollowaniem */
+    top: 20px;
+}
+
+/* Kontener sidebaru */
+.fav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Kompaktowa karta w sidebarze */
+.fav-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s;
+}
+
+.fav-card:hover {
+    transform: translateX(4px); /* Delikatny efekt wysunięcia */
+}
+
+/* Miniatura okładki */
+.fav-cover {
+    width: 45px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Dane tekstowe */
+.fav-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0; /* Ważne dla ucinania długiego tekstu */
+}
+
+.fav-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fav-author, .fav-year {
+    font-size: 0.75rem;
+    color: #666;
+}
+
+.btn-theme, .fav-btn{
+    background:none;
+    border: none;
+}
+.fav-card .remove-fav-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 5px;
+    color: #ff4757;
+}
+/* Ciemny motyw */
+body.dark-theme {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.dark-theme header {
+    background-color: #1e1e1e;
+    border-bottom: 1px solid #333333;
+}
+
+body.dark-theme .book-card, 
+body.dark-theme .fav-card, body.dark-theme .sidebar {
+    background-color: #1e1e1e;
+    border: 1px solid #333333;
+}
+
+/* Opcjonalnie zmień kolor tekstu autora w dark mode, żeby był czytelniejszy */
+body.dark-theme .fav-author, 
+body.dark-theme .book-info p {
+    color: #bbbbbb;
+}
+
+
+.main-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Układa tytuł nad wyszukiwarką */
+    align-items: center;    /* Centruje wszystko w nagłówku w poziomie */
+    padding: 20px 0;
+    background-color: #ffffff; /* Kolor z Twojego dark mode */
+}
+
+.search-bar-container {
+    width: 100%;
+    max-width: 600px; /* Szerokość paska */
+    margin: 20px auto; /* Auto na boki wyśrodkuje element */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* Status "Found: 100" też będzie wyśrodkowany */
+#status {
+    margin-top: 10px;
+    color: #888;
+    text-align: center;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Rozsuwa logo, szukajkę i przycisk */
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.search-bar-container {
+    flex-grow: 1; /* Pozwala wyszukiwarce zająć wolne miejsce */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Środkuje input i status względem siebie */
+    max-width: 600px; /* Maksymalna szerokość paska */
+}
+
+#searchInput {
+    width: 90%; /* Pasek zajmie 90% kontenera (600px) */
+    padding: 12px 25px;
+    border-radius: 30px; /* Zaokrąglone brzegi jak na screenie */
+    border: none;
+    background-color: #d1cfcf; /* Dopasowanie do Twojego tła */
+    color: rgb(0, 0, 0);
+    outline: none;
+    font-size: 1rem;
+
+}
+#searchInput:focus {
+    border-color: #ff4757;
+}
+
+#status {
+    font-size: 0.8rem;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Dostosowanie dla Dark Mode */
+body.dark-theme {
+    background-color: #1e1e1e;
+    border-bottom-color: #333;
+}
+
+body.dark-theme #searchInput {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #fff;
+}
