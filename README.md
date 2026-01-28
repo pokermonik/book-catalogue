@@ -1,5 +1,7 @@
 # book-catalogue
 
+The page is deployed at: https://pokermonik.github.io/book-catalogue/
+
 ## Task
 https://drive.google.com/file/d/1swszcMU9rF_-zRJaA2VchPuU_d7yrAbs/view?usp=sharing
 
